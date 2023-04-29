@@ -895,7 +895,7 @@ static cell_t NavMesh_NavAreaTravelDistance(IPluginContext *pCtx, const cell_t *
 	auto   		 function        = (params[3]);
 	const float  maxDist     = sp_ctof(params[4]);
 
-	return (cell_t)TheNavMesh->NavAreaTravelDistance(mesh_1, mesh_2, function, maxDist);
+	return NavAreaTravelDistance(mesh_1, mesh_2, function, maxDist);
 }
 
 #if 0
