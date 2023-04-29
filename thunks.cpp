@@ -79,6 +79,7 @@ namespace Thunks
 	
 	CNavArea * (CNavMesh:: *CNavMesh_GetNavArea)(const Vector&, float) const = nullptr;
 	CNavArea * (CNavMesh:: *CNavMesh_GetNearestNavArea)(const Vector&, bool, float, bool, bool, int) const = nullptr;
+	CNavArea * (CNavMesh:: *CNavMesh_NavAreaTravelDistance)(const CNavArea *, const CNavArea *, any, float) const = nullptr;
 	
 	int vtidx_CBaseEntity_MyCombatCharacterPointer = -1;
 	
