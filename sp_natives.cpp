@@ -4,6 +4,7 @@
 #include "util.h"
 
 #include "Nav/nav_mesh.h"
+#include "Nav/nav_pathfind.h"
 
 #include "PluginBot/PluginBotLocomotion.h"
 #include "PluginBot/PluginBotBody.h"
