@@ -891,8 +891,8 @@ static cell_t NavMesh_GetNearestNavArea_Vec(IPluginContext *pCtx, const cell_t *
 
 static cell_t NavMesh_NavAreaTravelDistance(IPluginContext *pCtx, const cell_t *params)
 {
-	auto         mesh_1        = (const CNavMesh*)params[1];
-	auto         mesh_2        = (const CNavMesh*)params[2];
+	auto         mesh_1        = (CNavMesh*)params[1];
+	auto         mesh_2        = (CNavMesh*)params[2];
 	auto   		 function        = (params[3]);
 	const float  maxDist     = sp_ctof(params[4]);
 

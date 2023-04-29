@@ -432,7 +432,7 @@ bool NavAreaBuildPath( CNavArea *startArea, CNavArea *goalArea, const Vector *go
  * Compute distance between two areas. Return -1 if can't reach 'endArea' from 'startArea'.
  */
 template< typename CostFunctor >
-float NavAreaTravelDistance( const CNavArea *startArea, const CNavArea *endArea, CostFunctor &costFunc, float maxPathLength = 0.0f )
+float NavAreaTravelDistance( CNavArea *startArea,CNavArea *endArea, CostFunctor &costFunc, float maxPathLength = 0.0f)
 {
 	if (startArea == NULL)
 		return -1.0f;
