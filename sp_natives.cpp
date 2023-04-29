@@ -887,6 +887,17 @@ static cell_t NavMesh_GetNearestNavArea_Vec(IPluginContext *pCtx, const cell_t *
 	return (cell_t)TheNavMesh->GetNearestNavArea(pos, anyZ, maxDist, checkLOS, checkGround, team);
 }
 
+
+static cell_t NavAreaTravelDistance(IPluginContext *pCtx, const cell_t *params)
+{
+	auto         mesh_1        = (const CNavMesh*)params[1];
+	auto         mesh_2        = (const CNavMesh*)params[2];
+	auto   		 function        = (params[3]);
+	const float  maxDist     = sp_ctof(params[4]);
+
+	return (cell_t)TheNavMesh->NavAreaTravelDistance(mesh_1, mesh_2, function, maxDist);
+}
+
 #if 0
 static cell_t NavMesh_CollectSurroundingAreas(IPluginContext *pCtx, const cell_t *params)
 {
@@ -960,6 +971,7 @@ const sp_nativeinfo_t g_Natives[] = {
 
 	{"NavMesh.GetNavArea_Vec", &NavMesh_GetNavArea_Vec},
 	{"NavMesh.GetNearestNavArea_Vec", &NavMesh_GetNearestNavArea_Vec},
+	{"NavMesh.NavAreaTravelDistance", &NavMesh_NavAreaTravelDistance},
 	//	{ "NavMesh.CollectSurroundingAreas",               &NavMesh_CollectSurroundingAreas               },
 
 	{nullptr, nullptr},
